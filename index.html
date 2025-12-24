@@ -1,53 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-bg: #0f172a;
+            --accent-color: #38bdf8;
+            --text-main: #f8fafc;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Moving Background Animation */
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
+            z-index: -1;
+        }
+
+        .blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+            filter: blur(80px);
+            border-radius: 50%;
+            animation: move 20s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(-20%, -20%); }
+            to { transform: translate(20%, 20%); }
+        }
+
+        /* Portfolio Card */
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: float 6s ease-in-out infinite;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Profile Picture */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 { margin: 0.5rem 0; font-size: 2rem; }
+        p { color: #94a3b8; margin-bottom: 2rem; }
+
+        /* Social Icons */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .social-links a {
+            color: var(--text-main);
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: scale(1.2);
+        }
+
+    </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="hero">
-    <h1>Vignesh</h1>
-    <p>Cloud Computing Student</p>
-    <a href="#projects" class="btn">See My Projects</a>
-  </header>
-
-  <!-- ABOUT -->
-  <section class="about">
-    <h2>About Me</h2>
-    <p>
-      I am currently studying Cloud Computing.  
-      This portfolio shows my practice projects.
-    </p>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="projects">
-    <h2>My Projects</h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <h3>Static Website on GitHub</h3>
-        <p>Deployed a simple website using GitHub Pages.</p>
-      </div>
-
-      <div class="card">
-        <h3>Cloud Resume (HTML)</h3>
-        <p>A simple resume hosted online.</p>
-      </div>
-
-      <div class="card">
-        <h3>Linux Practice Notes</h3>
-        <p>Documented basic Linux commands.</p>
-      </div>
-
+    <div class="background">
+        <div class="blob"></div>
     </div>
-  </section>
 
-  <script src="script.js"></script>
+    <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img">
+        
+        <h1>Your Name</h1>
+        <p>Creative Developer & Designer</p>
+
+        <div class="social-links">
+            <a href="mailto:your-email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/yourusername" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+
 </body>
 </html>
