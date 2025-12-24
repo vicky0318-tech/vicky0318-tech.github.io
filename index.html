@@ -7,16 +7,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-bg: #0b0f1a;
+            --primary-bg: #0b1120;
             --accent-color: #00d2ff;
             --text-main: #ffffff;
         }
 
-        /* Center everything and fix the background */
         body, html {
             margin: 0;
             padding: 0;
-            width: 100%;
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -26,22 +24,22 @@
             overflow: hidden;
         }
 
-        /* Moving Background */
-        .bg-container {
+        /* Animated Background */
+        .bg-animate {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1;
-            background: radial-gradient(circle at center, #16213e 0%, #0b0f1a 100%);
+            background: radial-gradient(circle at center, #1e293b 0%, #0b1120 100%);
         }
 
         .blob {
             position: absolute;
-            width: 500px;
-            height: 500px;
+            width: 50vw;
+            height: 50vw;
             background: linear-gradient(135deg, rgba(0, 210, 255, 0.2), rgba(157, 80, 187, 0.2));
             filter: blur(80px);
             border-radius: 50%;
-            animation: move 15s infinite alternate ease-in-out;
+            animation: move 20s infinite alternate linear;
         }
 
         @keyframes move {
@@ -49,51 +47,48 @@
             to { transform: translate(20%, 20%); }
         }
 
-        /* THE FIX: Fixed width card for Desktop & Mobile */
+        /* Card Fix for Desktop (Fixed Width) */
         .card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px 20px;
+            padding: 40px;
             border-radius: 24px;
             text-align: center;
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            width: 320px; /* This prevents the stretching seen in your photo */
-            animation: float 5s ease-in-out infinite;
+            width: 320px; /* This stops it from stretching on system view */
+            animation: float 6s ease-in-out infinite;
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-20px); }
         }
 
         .profile-img {
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             border: 3px solid var(--accent-color);
             object-fit: cover;
-            margin-bottom: 15px;
-            display: inline-block;
+            margin-bottom: 20px;
+            background: #1e293b;
         }
 
-        h1 { margin: 10px 0; font-size: 1.8rem; color: white; }
-        p { color: #94a3b8; margin-bottom: 25px; }
+        h1 { font-size: 2.2rem; margin: 10px 0; background: linear-gradient(to right, #00d2ff, #9d50bb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        p { color: #94a3b8; font-size: 1.1rem; margin-bottom: 30px; }
 
-        .social-links { display: flex; justify-content: center; gap: 20px; }
-        .social-links a { color: white; font-size: 1.5rem; transition: 0.3s; }
+        .social-links { display: flex; justify-content: center; gap: 25px; }
+        .social-links a { color: white; font-size: 1.8rem; transition: 0.3s; }
         .social-links a:hover { color: var(--accent-color); transform: scale(1.2); }
     </style>
 </head>
 <body>
 
-    <div class="bg-container">
-        <div class="blob"></div>
-    </div>
+    <div class="bg-animate"><div class="blob"></div></div>
 
     <div class="card">
-        <img src="./profile.jpg" alt="Vignesh R" class="profile-img">
+        <img src="profile.jpg" alt="Vignesh R" class="profile-img">
         
         <h1>Vignesh R</h1>
         <p>Cloud Support Engineer</p>
