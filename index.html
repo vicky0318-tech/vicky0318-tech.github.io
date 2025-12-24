@@ -1,56 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Portfolio - Cloud Computing Student</title>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body { font-family: Arial; margin: 0; background: #f7f7f7; }
-    header { background: #2b6cb0; color: white; padding: 20px; text-align: center; }
-    section { padding: 20px; max-width: 900px; margin: auto; }
-    .card { background: white; padding: 15px; margin: 10px 0; border-radius: 8px; }
-    footer { text-align: center; padding: 15px; color: #666; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-  <h1>Vignesh R — Cloud Computing Student</h1>
-  <p>College Project | Portfolio Website</p>
-</header>
+  <!-- HEADER -->
+  <header class="hero">
+    <h1>Vignesh</h1>
+    <p>Cloud Computing Student</p>
+    <a href="#projects" class="btn">See My Projects</a>
+  </header>
 
-<section>
-  <div class="card">
+  <!-- ABOUT -->
+  <section class="about">
     <h2>About Me</h2>
-    <p>I am currently studying cloud computing. This website is my Internship project.</p>
-  </div>
+    <p>
+      I am currently studying Cloud Computing.  
+      This portfolio shows my practice projects.
+    </p>
+  </section>
 
-  <div class="card">
-    <h2>Skills</h2>
-    <ul>
-      <li>Basics of Cloud Computing</li>
-      <li>Linux</li>
-      <li>Git & GitHub</li>
-    </ul>
-  </div>
+  <!-- PROJECTS -->
+  <section id="projects" class="projects">
+    <h2>My Projects</h2>
 
-  <div class="card">
-    <h2>My Cloud Goals</h2>
-    <p>I want to become a Cloud Support Engineer.</p>
-  </div>
+    <div class="cards">
 
-  <div class="card">
-    <h2>Contact</h2>
-    <p>Email: r.vignesh10101@gmail.com</p>
-  </div>
-</section>
+      <div class="card">
+        <h3>Static Website on GitHub</h3>
+        <p>Deployed a simple website using GitHub Pages.</p>
+      </div>
 
-<footer>
-  © 2025 — My Cloud Portfolio
-</footer>
+      <div class="card">
+        <h3>Cloud Resume (HTML)</h3>
+        <p>A simple resume hosted online.</p>
+      </div>
 
+      <div class="card">
+        <h3>Linux Practice Notes</h3>
+        <p>Documented basic Linux commands.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-
